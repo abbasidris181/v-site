@@ -11,7 +11,18 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->web(append: [
+            \App\Http\Middleware\UpdateUserPresence::class,
+        ]);
+
+        $middleware->validateCsrfTokens(except: [
+            'webhooks/*',
+        ]);
+
+        $middleware->alias([
+            'admin.access' => \App\Http\Middleware\EnsureAdminBackendAccess::class,
+            'verified.dual' => \App\Http\Middleware\EnsureFullyVerified::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -1,11 +1,24 @@
 @import 'tailwindcss';
 
+/* Enable class-based dark mode in Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: var(--site-font-family, 'Roboto', Arial, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji');
+    --font-mono: var(--site-font-family, 'Roboto', Arial, ui-sans-serif, system-ui, sans-serif);
+}
+
+:root {
+    --site-font-family: 'Roboto', Arial, sans-serif;
+    --font-mono: var(--site-font-family, 'Roboto', Arial, sans-serif);
+}
+
+body, html, button, input, select, textarea, .font-mono, [class*="font-mono"], code, kbd, samp, pre {
+    font-family: var(--site-font-family, 'Roboto', Arial, sans-serif) !important;
 }

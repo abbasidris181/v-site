@@ -35,4 +35,16 @@ return [
         ],
     ],
 
+    'monnify' => [
+        'api_key' => env('MONNIFY_API_KEY'),
+        'secret_key' => env('MONNIFY_SECRET_KEY'),
+        'contract_code' => env('MONNIFY_CONTRACT_CODE'),
+        'environment' => env('MONNIFY_ENVIRONMENT', 'SANDBOX'),
+        'enabled' => env('MONNIFY_ENABLED', true),
+    ],
+        'verify_user' => [
+            'base_url' => env('BASE_URL_VERIFY_USER'),
+            'token' => env('VERIFY_USER_TOKEN'),
+        ],
+        
 ];

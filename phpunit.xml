@@ -32,5 +32,7 @@
         <env name="PULSE_ENABLED" value="false"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="NIGHTWATCH_ENABLED" value="false"/>
+        <env name="BASE_URL_VERIFY_USER" value="https://unitybills.com"/>
+        <env name="VERIFY_USER_TOKEN" value=""/>
     </php>
 </phpunit>

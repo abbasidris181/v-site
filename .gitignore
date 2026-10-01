@@ -22,3 +22,15 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+desktop.ini
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local Development & Scratch Files
+/scratch/
+/render_slip_test.php
+
+# Local SQLite databases
+database/*.sqlite
+database/*.sqlite-journal
